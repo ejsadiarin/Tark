@@ -3,23 +3,24 @@ import { Button } from './components/ui/button'
 import Navbar from './components/Navbar'
 import { Sidebar } from './components/Sidebar'
 import { ThemeProvider } from './components/ui/theme-provider'
-import { ModeToggle } from './components/ui/mode-toggle'
+import Home from './components/Home'
+import { Separator } from './components/ui/separator'
 
 function App() {
   return (
     <>
       <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
-        <ModeToggle />
         <div className='flex h-full '>
 
 
           {/* <Navbar /> */}
           <Sidebar />
 
+          <Separator orientation='vertical' className='text-[#1e293h] bg-[#1e293h]' />
+
           {/* Main Dashboard UI */}
-          <div className='flex w-full '>
-            <h1>main</h1>
-          </div>
+          <Home />
+
 
 
         </div>

@@ -1,6 +1,8 @@
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 import { ScrollArea } from "@/components/ui/scroll-area"
+import { Home } from 'lucide-react'
+import { ModeToggle } from "./ui/mode-toggle"
 
 // import { Playlist } from "../data/playlists"
 
@@ -11,12 +13,15 @@ interface SidebarProps extends React.HTMLAttributes<HTMLDivElement> {
 export function Sidebar() {
   return (
     <div className="">
-      <div className="space-y-4 py-4">
+      <div className="space-y-4 py-4 border-r-2 border-r-[#1e293b]">
+
         <div className="px-3 py-2">
-          <h2 className="mb-2 px-4 text-lg font-semibold tracking-tight">
+          <h2 className="flex justify-between items-center mb-2 px-4 text-lg font-semibold tracking-tight">
             Tark
+            <ModeToggle />
           </h2>
           <div className="space-y-1">
+
             <Button variant="secondary" className="w-full justify-start">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -31,8 +36,9 @@ export function Sidebar() {
                 <circle cx="12" cy="12" r="10" />
                 <polygon points="10 8 16 12 10 16 10 8" />
               </svg>
-              Listen Now
+              Home
             </Button>
+
             <Button variant="ghost" className="w-full justify-start">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -49,8 +55,9 @@ export function Sidebar() {
                 <rect width="7" height="7" x="14" y="14" rx="1" />
                 <rect width="7" height="7" x="3" y="14" rx="1" />
               </svg>
-              Browse
+              Projects
             </Button>
+
             <Button variant="ghost" className="w-full justify-start">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -68,15 +75,18 @@ export function Sidebar() {
                 <path d="M16.2 7.8c2.3 2.3 2.3 6.1 0 8.5" />
                 <path d="M19.1 4.9C23 8.8 23 15.1 19.1 19" />
               </svg>
-              Radio
+              Dashboard
             </Button>
+
           </div>
         </div>
+
         <div className="px-3 py-2">
           <h2 className="mb-2 px-4 text-lg font-semibold tracking-tight">
             Library
           </h2>
           <div className="space-y-1">
+
             <Button variant="ghost" className="w-full justify-start">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -96,6 +106,7 @@ export function Sidebar() {
               </svg>
               Playlists
             </Button>
+
             <Button variant="ghost" className="w-full justify-start">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -112,6 +123,7 @@ export function Sidebar() {
               </svg>
               Songs
             </Button>
+
             <Button variant="ghost" className="w-full justify-start">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -144,6 +156,7 @@ export function Sidebar() {
               </svg>
               Artists
             </Button>
+
             <Button variant="ghost" className="w-full justify-start">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -162,8 +175,10 @@ export function Sidebar() {
               </svg>
               Albums
             </Button>
+
           </div>
         </div>
+
 
         {/* <div className="py-2"> */}
         {/*   <h2 className="relative px-7 text-lg font-semibold tracking-tight"> */}
