@@ -1,0 +1,23 @@
+version: '3.9'
+services: 
+  db:
+    image: postgres
+    restart: always
+    container_name: tark_postgres_db
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 123
+      POSTGRES_DB: tarkdb
+    ports:
+      - '5432:5432'
+    volumes:
+      - db:/var/lib/postgresql/data
+#  api:
+#    build:
+#      context: .
+#      dockerfile: Dockerfile
+#    environment:
+#      ConnectionStrings__TarkDbConnection: "User ID = postgres;Password=123;Server=postgres;Port=5432;Database=tarkdb;Integrated Security=true;Pooling=true"
+
+volumes: 
+  db:

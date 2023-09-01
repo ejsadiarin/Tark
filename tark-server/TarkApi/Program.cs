@@ -5,8 +5,13 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddDbContext<TarkDbContext>(options => 
-    options.UseNpgsql(builder.Configuration.GetConnectionString("TarkDbConnection")));
+    options
+        .UseNpgsql(builder.Configuration.GetConnectionString("TarkDbConnection"))
+        .UseSnakeCaseNamingConvention() 
+    );
 
+// idk if here CORS || TODO: add specific policy (URI or URL) for the CORS, ex. limit it to localhost:3000
+// builder.Services.AddCors();
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();

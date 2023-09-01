@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "F+QIYuR9g7fYnx8yVKyraBPqjbKcRdNUa0d5YKVTEV2hRhwG654onEkbdEwudflzUn2tqwIMnzSmTsePY7mmvQ==",
+  "dgSpecHash": "FADuh64jzZLdniFOkCKYmBbo7A9e+L/vBv8GyKI+6B6LuTzz/AHCGteIe5PU7QNNtWPP5f6KbLpgF+jjxltOrg==",
   "success": true,
   "projectFilePath": "/home/exquisite/main/Tark/tark-server/TarkApi/TarkApi.csproj",
   "expectedPackageFiles": [
+    "/home/exquisite/.nuget/packages/efcore.namingconventions/7.0.2/efcore.namingconventions.7.0.2.nupkg.sha512",
     "/home/exquisite/.nuget/packages/humanizer.core/2.14.1/humanizer.core.2.14.1.nupkg.sha512",
     "/home/exquisite/.nuget/packages/microsoft.aspnetcore.openapi/7.0.10/microsoft.aspnetcore.openapi.7.0.10.nupkg.sha512",
     "/home/exquisite/.nuget/packages/microsoft.entityframeworkcore/7.0.10/microsoft.entityframeworkcore.7.0.10.nupkg.sha512",

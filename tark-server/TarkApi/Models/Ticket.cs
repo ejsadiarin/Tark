@@ -9,7 +9,7 @@ public class Ticket
     public string Status { get; set; } = "No Status"; // serves as the category for kanban boards
     public int CreatedByUserId { get; set; }
     public int? AssignedToUserId { get; set; }
-    public DateTime CreatedAt { get; set; }
+    public DateTime? CreatedAt { get; set; }
     public DateTime? UpdatedAt { get; set; }
 
     // Navigational Properties
