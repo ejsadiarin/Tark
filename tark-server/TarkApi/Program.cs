@@ -1,14 +1,18 @@
 using Microsoft.EntityFrameworkCore;
 using TarkApi.DAL;
+using TarkApi.Services.TicketService;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+
+
 builder.Services.AddDbContext<TarkDbContext>(options => 
     options
         .UseNpgsql(builder.Configuration.GetConnectionString("TarkDbConnection"))
         .UseSnakeCaseNamingConvention() 
     );
+builder.Services.AddScoped<ITicketService, TicketService>();
 
 // idk if here CORS || TODO: add specific policy (URI or URL) for the CORS, ex. limit it to localhost:3000
 // builder.Services.AddCors();

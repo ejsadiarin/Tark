@@ -1,38 +1,52 @@
-using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using TarkApi.DAL;
 using TarkApi.Models;
+using TarkApi.Services.TicketService;
 
 namespace TarkApi.Controllers;
 
 [ApiController]
 [Route("[controller]")]
-public class TicketController
+public class TicketController : ControllerBase
 {
-    private readonly TarkDbContext _context;
+    private readonly ITicketService _ticketService;
     
-    public TicketController(TarkDbContext context)
+    public TicketController(ITicketService ticketService)
     {
-        _context = context;
+        _ticketService = ticketService;
     }
     
     [HttpGet(Name = "GetAllTickets")]
     public async Task<ActionResult<List<Ticket>>> GetTickets()
     {
-        var ticket = new Ticket()
-        {
-            ProjectId = 1,
-            Title = "Test test",
-            Description = "testsjdhkfdsgh dfgsfgkejkeja",
-            CreatedByUserId = 1,
-        };
+        var result = await _ticketService.GetAllTickets();
 
-        _context.Add(ticket);
-        await _context.SaveChangesAsync();
+        return Ok(result);
+    }
 
-        var allTickets = await _context.Tickets.ToListAsync();
+    [HttpPost]
+    public async Task<ActionResult<List<Ticket>>> AddTicket(Ticket req)
+    {
+        var result = await _ticketService.AddTicket(req);
+        
+        return result;
+    }
 
-        return Ok(allTickets);
+    [HttpPut("{id}")]
+    public async Task<ActionResult<List<Ticket>>> UpdateTicket(int id, Ticket req)
+    {
+        var result = await _ticketService.UpdateTicket(id, req);
+        if (result is null) return NotFound("Id not found.");
+
+        return Ok(result);
+    }
+    
+    [HttpDelete("{id}")]
+    public async Task<ActionResult<List<Ticket>>> DeleteTicket(int id)
+    {
+        var result = await _ticketService.DeleteTicket(id);
+        if (result is null) return NotFound("Id not found.");
+
+        return Ok(result);
     }
 }
