@@ -5,6 +5,7 @@ import { Sidebar } from './components/Sidebar'
 import { ThemeProvider } from './components/ui/theme-provider'
 import Home from './components/Home'
 import { Separator } from './components/ui/separator'
+import KanbanBoard from './features/kanban/KanbanBoard'
 
 function App() {
   return (
@@ -19,7 +20,8 @@ function App() {
           <Separator orientation='vertical' className='text-[#1e293h] bg-[#1e293h]' />
 
           {/* Main Dashboard UI */}
-          <Home />
+          {/* <Home /> */}
+          <KanbanBoard />
 
 
 
